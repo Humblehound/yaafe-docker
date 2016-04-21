@@ -6,7 +6,7 @@ RUN apt-get install cmake cmake-curses-gui libargtable2-0 libargtable2-dev libsn
 RUN git clone https://github.com/Yaafe/Yaafe.git yaafe
 RUN cd yaafe && git checkout tags/v0.65
 RUN mkdir yaafe/build
-RUN cd yaafe/build && cmake ..
+RUN cd yaafe/build && cmake -DWITH_MPG123=ON ..
 RUN cd yaafe/build && make
 RUN cd yaafe/build && make install
 
